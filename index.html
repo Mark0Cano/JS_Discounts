@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Section -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
+    
+    <title>Happy Market</title>
+    <link rel="stylesheet" href="./marketStyle.css" type="text/css">
+</head>
+<body>
+    <header></header>
+ 
+    <main class="main">
+        <div class="main__display"></div>
+        <div class="main__holder">
+            <form class="main__holder--fomr" action="">
+                <h3>Artículo seleccionado</h3>
+                <div class="articleDisplay"></div>
+                <label>Este es el precio real de tu artículo
+                    <p></p>
+                </label>
+                <h4>Ahora selecciona un descuento :3</h4>
+                <div class="main__holder--form--label">
+                    <label for="t01" >Descuento General</label>
+                    <input type="radio" id="t01">
+                    <input type="text" placeholder="Ingresa el código" id="keyC01" class="main__holder--form--input"> 
+                </div>
+                <div class="main__holder--form--label">
+                    <label for="t02">Descuento Madre soltera</label>
+                    <input type="radio" id="t02">
+                    <input type="text" placeholder="Ingresa el código" id="keyC02" class="main__holder--form--input">
+                </div>
+                <div class="main__holder--form--label">
+                    <label for="t03">Descuento Padre soltero</label>
+                    <input type="radio" id="t03">
+                    <input type="text" placeholder="Ingresa el código" id="keyC03" class="main__holder--form--input">
+                </div>
+                <div class="main__holder--form--label">
+                    <label for="t04">Descuento Estudiante</label>
+                    <input type="radio" id="t04">
+                    <input type="text" placeholder="Ingresa el código" id="keyC04" class="main__holder--form--input">
+                </div>
+                <br>
+                    <button id="calculate" type="button">Calcular Descuento</button>
+                <p id="pInteractivo"></p>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+    <script type="text/javascript" src="./jsFile.js"></script>
+</body>
+</html>
