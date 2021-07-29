@@ -1,6 +1,4 @@
 /*  ----    Formules  ----  */
-
-const basePrice = 1550;
 const availableDiscounts = [15, 20, 30, 40];
 
 
@@ -12,39 +10,83 @@ const ticket_04 = 'STD00525';
 
 /*  ----  Get Elements  ----  */
 const calButton = document.getElementById('calculate');
-calButton.addEventListener('click', prueba);
+calButton.addEventListener('click', addDiscount);
 
-function prueba()
+function addDiscount()
 {
-    let botoncito01 = document.getElementById('t01');
-    console.log('Mi botoncito funciona :D');
-    if(botoncito01.checked)
-    {
-        console.log('Mi input fucniona :3');
-        const validation01 = document.getElementById('keyC01');
-        if(ticket_01 == validation01.value)
-        {
-            console.log('Descuento ingresado correctamente');
-        }
-            else 
-            {
-            console.log('Tu código es incorrecto perra >:v');
-            }
+    
+}
+
+
+/*  ----  Add Article Function  ----  */
+const botoncitoAñadir = document.getElementById('addItem');
+botoncitoAñadir.addEventListener('click', addItemDiscount);
+
+let articulito = 
+[
+    document.getElementById('tDis01'), 
+    document.getElementById('tDis02'), 
+    document.getElementById('tDis02')
+];
+
+let art01;
+
+let prices = [2500, 3850, 5620];
+
+console.log('No mames' + articulito[0]);
+
+function addItemDiscount()
+{
+  let realPrice = document.getElementById('pInteractivo_01');
+    if(articulito[0].checked)
+    { 
+       realPrice.innerHTML = prices[0] + 'MNX';
     }
-
-else 
-{
-    console.log('No has seleccionado ningún descuento');
 }
-}
-
 
 
 /*  ----  Dicount Function  ----  */
-function discounting (discount)
+
+const botoncitoClacular = document.getElementById('calculate');
+botoncitoClacular.addEventListener('click', discounting);
+
+let basePrice = 0;
+
+function discounting(discount)
 {
-    var finalPrice = (basePrice * (100 - discount) / 100);
-    return  finalPrice 
+   for(i = 0; i < 3; i++)
+   {
+       if(articulito[i].checked)
+       {
+           basePrice += prices[i];
+       }
+    console.log(basePrice);
+   }
+
+   let botoncito01 = document.getElementById('t01');
+   console.log('Mi botoncito funciona :D');
+   if(botoncito01.checked)
+   {
+       console.log('Mi input fucniona :3');
+       const validation01 = document.getElementById('keyC01');
+       if(ticket_01 == validation01.value)
+       {
+            console.log('Descuento ingresado correctamente');
+            let finalPrice = (basePrice * (100 - discount) / 100);
+            let showDiscount = document.getElementById('pInteractivo_02');
+            showDiscount.innerHTML = '!Este es tu precio final!' + finalPrice;
+       }
+           else 
+           {
+           alert('Tu código es incorrecto perra >:v');
+           }
+   }
+   else 
+   {
+       alert('No has seleccionado ningún descuento');
+   }   
+   
+
+return  finalPrice 
 }
 
-console.log(discounting(availableDiscounts[0]));

@@ -13,16 +13,52 @@
     <link rel="stylesheet" href="./marketStyle.css" type="text/css">
 </head>
 <body>
-    <header></header>
+    <header class="header">
+
+    </header>
  
     <main class="main">
-        <div class="main__display"></div>
+        <div class="main__display">
+            <h2>Cupones disponibles</h2>
+            <div class="main__display__ticket">
+                <p>Descuento general para el público</p>
+                <p class="ticket--code">Código GEN00105</p>
+                <div class="main__display--back_01"></div>
+                <div class="main__display--back_02"></div>
+            </div>
+            <div class="main__display__ticket">
+                <p>Descuento para madres solteras</p>
+                <p class="ticket--code">Código MOM00358</p>
+                <div class="main__display--back_01"></div>
+                <div class="main__display--back_02"></div>
+            </div>
+            <div class="main__display__ticket">
+                <p>Descuento para padres solteros</p>
+                <p class="ticket--code">Código DAD00225</p>
+                <div class="main__display--back_01"></div>
+                <div class="main__display--back_02"></div>
+            </div>
+            <div class="main__display__ticket">
+                <p>Descuento paara los estudiantes</p>
+                <p class="ticket--code">Código STD00525</p>
+                <div class="main__display--back_01"></div>
+                <div class="main__display--back_02"></div>
+            </div>
+        </div>
         <div class="main__holder">
             <form class="main__holder--fomr" action="">
                 <h3>Artículo seleccionado</h3>
-                <div class="articleDisplay"></div>
-                <label>Este es el precio real de tu artículo
-                    <p></p>
+                <div class="articleDisplay">
+                    <img src="" alt="" class="articleDisplay--img">
+                    <div class="articleDisplay--ButtonsHolder">
+                        <input type="radio" id="tDis01">
+                        <input type="radio" id="tDis02">
+                        <input type="radio" id="tDis03">
+                    </div>
+                </div>
+                <button id="addItem" class="main__holder--fomr--button" type="button">Añadir al carrito</button>
+                <label class="main__holder--fomr__label01">Este es el precio real de tu artículo
+                    <p id="pInteractivo_01" class="pInteractivo_01"></p>
                 </label>
                 <h4>Ahora selecciona un descuento :3</h4>
                 <div class="main__holder--form--label">
@@ -46,12 +82,13 @@
                     <input type="text" placeholder="Ingresa el código" id="keyC04" class="main__holder--form--input">
                 </div>
                 <br>
-                    <button id="calculate" type="button">Calcular Descuento</button>
-                <p id="pInteractivo"></p>
+                    <button id="calculate" class="main__holder--fomr--button" type="button">Calcular Descuento</button>
+                    <h2>Este es el precio final</h2>
+                    <p id="pInteractivo_02"></p>
             </form>
         </div>
     </main>
-    <footer></footer>
+    <footer class="footer"></footer>
     <script type="text/javascript" src="./jsFile.js"></script>
 </body>
 </html>

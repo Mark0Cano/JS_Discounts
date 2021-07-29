@@ -8,28 +8,48 @@ body {
 
 }
 
+/* ----     Header Section Styles  ----*/
+.header {
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+}
+
 /* ----     Main Section Styles  ----*/
 
 .main {
     width: 100%;
-    height: 800px;
-    background-color: black;
+    height: auto;
+    background-color: #e7e7e7;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-top: 15px;
-    padding-right: 15px;
     box-sizing: border-box;
+    position: relative;
 }
 
 
 /* ----     Discount Section Styles  ----*/
 .main__holder {
-    height: 600px;
+    height:auto;
     width: 450px;
     background-color: #D4F1F4;
     border-radius: 5px;
     position: relative;
+    margin-top: 20px;
+}
+
+.main__holder--fomr {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.main__holder--fomr h4 
+{
+    margin-top: 20px;
 }
 
 .main__holder--form--label {
@@ -52,6 +72,11 @@ body {
     display: block; 
 }
 
+.main__holder--fomr__label01
+{
+    margin-top: 20px;
+}
+
 
 .main__holder--form--input {
     background: transparent;
@@ -64,17 +89,109 @@ body {
     margin-left: 15px;
 }
 
+.main__holder--fomr--button {
+    background-color: #dc143c;
+    width: 150px;
+    height: 60px;
+    border: 0;
+    color: #ffffff;
+    border-radius: 3px;
+}
+
 .articleDisplay {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background-color: #189AB4;
     position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.articleDisplay--img {
+    width: 320px;
+    height: 320px;
+    margin-top: 15px;
+    background-color: forestgreen;
+}
+
+.pInteractivo_01 {
+   text-align: center;
+    font-size: 18pt;
+    color: rgb(48, 48, 48);;
+}
+
+.articleDisplay--ButtonsHolder {
+    margin-top: 20px;
 }
 
 /* ----     Ticket Section Styles  ----*/
 .main__display {
     width: 600px;
-    height: 400px;
+    height: 500px;
     background-color: #75E6DA;
     border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.main__display h2 {
+    color: rgb(48, 48, 48);
+    text-align:center ;
+}
+
+.main__display__ticket {
+    height: 80px;
+    width: 500px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: #dc143c;
+    color: #ffffff;
+    position: relative;
+}
+
+.main__display__ticket p {
+    width: 500px;
+    margin-left: 45px;
+    
+}
+
+.ticket--code {
+    text-indent: 15px;
+    line-height: 40px;
+    border-left: #75E6DA dashed 1px;
+}
+
+.main__display--back_01
+{
+    width: 0; 
+    height: 0; 
+    border-left: 30px solid  #75E6DA;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    position: absolute;
+}
+
+.main__display--back_02
+{
+    width: 0; 
+    height: 0; 
+    border-left: 30px solid  #dc143c;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    position: absolute;
+    margin-left: 500px;
+}
+
+/* ----     Footer Section Styles  ----*/
+.footer {
+    background-color: #272727;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin: 0;
 }
