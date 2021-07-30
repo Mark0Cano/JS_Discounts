@@ -52,7 +52,7 @@ botoncitoClacular.addEventListener('click', discounting);
 
 let basePrice = 0;
 
-function discounting(discount)
+function discounting()
 {
    for(i = 0; i < 3; i++)
    {
@@ -60,15 +60,17 @@ function discounting(discount)
        {
            basePrice += prices[i];
        }
-    console.log(basePrice);
+    console.log('Este es el precio base' + basePrice);
    }
 
    let botoncito01 = document.getElementById('t01');
    console.log('Mi botoncito funciona :D');
    if(botoncito01.checked)
    {
-       console.log('Mi input fucniona :3');
+       console.log('Mi input de descuento fucniona :3');
+       discount = availableDiscounts[0];
        const validation01 = document.getElementById('keyC01');
+       console.log(discount);
        if(ticket_01 == validation01.value)
        {
             console.log('Descuento ingresado correctamente');
@@ -84,9 +86,6 @@ function discounting(discount)
    else 
    {
        alert('No has seleccionado ningún descuento');
-   }   
-   
-
-return  finalPrice 
+   }    
 }
 
