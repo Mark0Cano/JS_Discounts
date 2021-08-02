@@ -32,18 +32,17 @@ const myDiscount =
     document.getElementById('t04')
 ];
 
-/*  ----  Article art  ----  */
-let art01;
 
 /*  ----  True selection ----  */
 let itemSelected = true;
 
 
-
+console.log(articulito[1].checked);
 
 /*  ---- Add Item to calculate Function  ----  */
 function summArticles()
 {
+  console.log(articulito[1].checked);
   let showRealPrice = document.getElementById('pInteractivo_01');
   let grandTotal = 0;  
   for(i = 0; i < 3; i++)
@@ -79,41 +78,54 @@ let validation =
 
 function discounting()
 {
-  let basePrice = document.getElementById('pInteractivo_01');
-  console.log('Mi botoncito funciona :D');
-  console.log(basePrice.textContent);
-  let priceTo = parseFloat(basePrice.textContent);
-  console.log(priceTo);
-  let maxDiscount = 0;
-/*  ---- Loop for get discounts  ----  */
-  for(i = 0; i < availableDiscounts.length; i++)
+  if(articulito[0].checked == true || articulito[1].checked == true || articulito[2].checked == true)
   {
-    if(myDiscount[i].checked == itemSelected)
-     {
-        console.log('Mi input de descuento fucniona :3');
-        discount = availableDiscounts[i];
- 
-/*  ----  Validation Discount Function  ----  */      
-        if(ticket[i] == validation[i].value)
+    let basePrice = document.getElementById('pInteractivo_01');
+    console.log('Mi botoncito funciona :D');
+    console.log(basePrice.textContent);
+    let priceTo = parseFloat(basePrice.textContent);
+    console.log(`Se supone que es es el precio base ${priceTo}`);
+    let maxDiscount = 0;
+  /*  ---- Loop for get discounts  ----  */
+    for(i = 0; i < availableDiscounts.length; i++)
+    {
+      if(myDiscount[i].checked == itemSelected)
+      {
+          console.log('Mi input de descuento fucniona :3');
+          discount = availableDiscounts[i];
+  
+  /*  ----  Validation Discount Function  ----  */      
+          if(ticket[i] == validation[i].value)
+          {
+          console.log(`Este es el descuento actual ${discount}`);    
+          console.log('Descuento ingresado correctamente');
+          maxDiscount = maxDiscount + availableDiscounts[i];
+          console.log(`Este es el descuento acumulado ${maxDiscount}`);
+          let finalPrice = priceTo * (100 - maxDiscount) / 100;
+          let showDiscount = document.getElementById('pInteractivo_02');
+          showDiscount.innerHTML = finalPrice;
+          }
+          else 
+          {
+            alert('Tu código es incorrecto amigo >:v');
+            return;
+          }   
+      }
+      else 
+      {
+        if(myDiscount[0].checked == true || myDiscount[1].checked == true || myDiscount[2].checked == true)
         {
-        console.log(`Este es el descuento actual ${discount}`);    
-        console.log('Descuento ingresado correctamente');
-        maxDiscount = maxDiscount + availableDiscounts[i];
-        console.log(`Este es el descuento acumulado ${maxDiscount}`);
-        let finalPrice = priceTo * (100 - maxDiscount) / 100;
-        let showDiscount = document.getElementById('pInteractivo_02');
-        showDiscount.innerHTML = finalPrice;
+          console.log('Te la estamos descontando amiguitow :3');
         }
-        else 
-        {
-          alert('Tu código es incorrecto amigo >:v');
+        else{
+          alert('No has seleccionado ningún descuento');
           return;
         }   
+      }    
     }
-    else 
-    {
-      alert('No has seleccionado ningún descuento');
-      return;
-    }    
+  }
+  else{
+    alert('Tu carrito esta vacio, amiguito :c');
+    return;
   }
 }
